@@ -1,7 +1,11 @@
 <template>
-  <v-app>
-    <router-view />
-  </v-app>
+  <div>
+    <v-app>
+      <v-content  class="text-xs-center" grid-list-lg>
+        <router-view />
+      </v-content>
+    </v-app>
+  </div>
 </template>
 
 <script>
