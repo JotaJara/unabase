@@ -10,7 +10,9 @@ const actions = {
 
     userService.getAll()
       .then(
-        result => commit('getAllSuccess', result.data),
+        result => {
+          commit('getAllSuccess', result.data)
+        },
         error => commit('getAllFailure', error)
       )
   },
@@ -20,9 +22,8 @@ const actions = {
 
     userService.register(user)
       .then(
-        userx => {
-          console.log(user)
-          commit('registerSuccess', userx)
+        result => {
+          commit('registerSuccess', result.data)
         },
         error => {
           commit('registerFailure', error)
@@ -33,7 +34,7 @@ const actions = {
   dilitUser ({ commit }, id) {
     commit('deleteRequest', id)
 
-    userService.delit(id)
+    userService.delete(id)
       .then(
         user => commit('deleteSuccess', id),
         error => commit('deleteFailure', { id, error: error.toString() })
@@ -45,8 +46,7 @@ const actions = {
     userService.update(user)
       .then(
         result => {
-          commit('updateSuccess', result)
-          console.log(result)
+          commit('updateSuccess', result.data)
         },
         error => commit('updateFailure', { user, error: error.toString() })
       )

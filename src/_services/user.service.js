@@ -33,8 +33,8 @@ function _delete (id) {
 }
 
 function handleResponse (result) {
-  if (result.statusText !== 'OK') {
+  if (result.statusText !== '') {
     return result.error
   }
-  return result.data
+  return result
 }

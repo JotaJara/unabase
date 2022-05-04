@@ -5,8 +5,8 @@ function multiplica(a, b) {
      c = c + b;
   return c;
 }
-
-console.log(multiplica(2,3))
+var multi = multiplica(2,3)
+console.log(multi)
 
 // EJERCICIO 2
 function elMayor(a) {
@@ -42,14 +42,14 @@ let ninja = {
   description: 'is so cool'
 }
 
-console.log(delEmptyKeys(ninja))
+console.log(eliminarBlancos(ninja))
 
 // EJERCICIO 4
 
 function contarPalabras(str, find) {
   return (str.split(find)).length - 1;
 }
-contarPalabras("El texto esta escrito con texto que esta puro", "esta")
+contarPalabras("El texto esta escrito con texto que esta puro, ay! que puro esta este texto", "esta")
 
 // EJERCICIO 5
 
@@ -88,8 +88,16 @@ console.log(mayorMenor(ninja))
 // EJERCICIO 6
 function palindromo(a) {
   let reg = /[\W_]/g;
+  var tru = 'Si es un palindromo'
+  var fals = 'No es un palindromo'
   var minusculas = a.toLowerCase().replace(reg, '');
   var reversa = minusculas.split('').reverse().join('');
   // devuelve true o false 
-  return reversa === minusculas;
+  if (reversa === minusculas){
+    return a + ' >> ' + tru
+  } else {
+    return a + ' >> ' + fals
+  }
 }
+var a = 'Anita lava la tina'
+console.log(palindromo(a))

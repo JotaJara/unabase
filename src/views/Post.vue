@@ -23,7 +23,10 @@
                   <v-text-field v-model="editedItem.userId" label="userId"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field v-model="editedItem.titulo" label="titulo"></v-text-field>
+                  <v-text-field v-model="editedItem.id" label="id"></v-text-field>
+                </v-flex>
+                <v-flex xs12 sm6 md4>
+                  <v-text-field v-model="editedItem.title" label="titulo"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-textarea v-model="editedItem.body" label="Body"></v-textarea>

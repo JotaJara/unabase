@@ -20,8 +20,8 @@ const actions = {
 
     postsService.register(post)
       .then(
-        postx => {
-          commit('registerSuccess', postx)
+        result => {
+          commit('registerSuccess', result.data)
         },
         error => {
           commit('registerFailure', error)
@@ -43,7 +43,7 @@ const actions = {
     commit('updateRequest', post.id)
     postsService.update(post)
       .then(
-        post => commit('updateSuccess', post),
+        result => commit('updateSuccess', result.data),
         error => commit('updateFailure', { post, error: error.toString() })
       )
   }
